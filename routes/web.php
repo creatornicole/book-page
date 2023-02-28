@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EntryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,16 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Show All Entries
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [EntryController::class, 'index']);
 
 //Show Create Page
-Route::get('entries/create', function() {
-    return view('create');
-});
+Route::get('entries/create', [EntryController::class, 'create']);
 
 //Save Book Entry
-Route::post('/submit', function() {
-    return redirect('/');
-});
+Route::post('/submit', [EntryController::class, 'submit']);

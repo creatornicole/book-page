@@ -30,18 +30,27 @@
         @csrf <!-- prevents crossside scripting -->
 
         <div>
-            <label for="bTitle">Title</label><br>
-            <input type="text" id="bTitle" name="bTitle">    
+            <label for="title">Title</label><br>
+            <input type="text" id="title" name="title">    
+            @error('title')
+                <!-- action if validation fails -->
+            @enderror
         </div>
 
         <div>
-            <label for="bAuthor">Author</label><br>
-            <input type="text" id="bAuthor" name="bAuthor">    
+            <label for="author">Author</label><br>
+            <input type="text" id="author" name="author">    
+            @error('author')
+                <!-- action if validation fails -->
+            @enderror
         </div>
 
         <div>
-            <label for="bDescrip">Summary</label><br>
-            <textarea name="bSum" id="bSum" cols="30" rows="10"></textarea>    
+            <label for="aescrip">Summary</label><br>
+            <textarea name="sum" id="sum" cols="30" rows="10"></textarea>    
+            @error('sum')
+                <!-- action if validation fails -->
+            @enderror
         </div>
 
         <button type="submit">Add</button>
